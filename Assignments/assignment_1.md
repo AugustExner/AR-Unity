@@ -21,7 +21,7 @@ Find a group of 3 members and do the following:
 4. Find an suitable group and click "Join group"
 
 ### Setup Gitlab ([Video Guide](https://www.youtube.com/watch?v=jZUpa-EqS_Y))
-1. Create a **private** project on https://gitlab.au.dk using this [template](https://gitlab.au.dk/ar/template.git). Guide:
+1. Create a **private** project on https://gitlab.au.dk using [this project](https://gitlab.au.dk/ar/ar-s24) as a template. Guide:
    1. One group member go to https://gitlab.au.dk.
    2. Click: `new project`.
    3. Click: `Import project` (do not Create blank project nor Create from template).
