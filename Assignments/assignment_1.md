@@ -27,7 +27,7 @@ Find a group of 3 members and do the following:
    3. Click: `Import project` (do not Create blank project nor Create from template).
    4. Click: `Repo by URL`.
    5. Then fill in the following information:
-      * Git repository URL: `https://gitlab.au.dk/ar/template.git`
+      * Git repository URL: `https://gitlab.au.dk/ar/ar-s24.git`
       * Project name: `[YOUR PROJECT NAME]` (e.g. `AR24`)
       * Visibility level: `Private`
    6. Click: `Create project`
