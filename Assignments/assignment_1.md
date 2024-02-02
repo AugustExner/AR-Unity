@@ -206,5 +206,5 @@ Submit the following:
 * **Build file (apk):** Apk build file that results from the building process (as an attachment on Brightspace)
 * **Written answers:** In a _a1.md_ file located root of your source code submitted in the release
 * **Recap table filled:** In that same _a1.md_ file, copy the table from the recap section and mark with ✅/❌ whether you implemented such feature or not (This will help us avoid looking for features in your video/code you didn't implement)
-* **A Short video:** (under 2 minutes) in which all the points of the assignment are demonstrated (of course ignore the written items for the video). Please try to showcase all the items in order. Don't worry about your video being short, if all the items are shown then is perfect. **Upload to Youtube as an unlisted video and provide the link in the _a1.md_ file**
+* **A Short video:** (under 2 minutes) in which all the points of the assignment are demonstrated (of course ignore the written items for the video). Please try to showcase all the items in order. Don't worry about your video being short, if all the items are shown then is perfect. **Upload to Youtube as an unlisted video and provide the link in the _a1.md_ file** [How to screen screen record](https://www.meta.com/en-gb/help/quest/articles/in-vr-experiences/social-features-and-sharing/record-video-oculus/)
 
