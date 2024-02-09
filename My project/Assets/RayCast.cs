@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.XR;
 
 public class RayCast : MonoBehaviour
 {
@@ -51,18 +46,25 @@ public class RayCast : MonoBehaviour
         // Method for lefthand pinching
         if (leftHand.IsTracked) // Checks if left hand is being tracked
         {
-            if (isLeftIndexPinching & !hasSpawned & !hasPinched) // Checks if a pinch is registred. And object is not already spawned. 
+            if (!isLeftIndexPinching) // If released reset
             {
-                hasPinched = true;
-                if (hit.transform.tag == "pickableTag")
-                {
+                hasPinched = false;
+                hasSpawned = false;
+            }
+
+
+            if (isLeftIndexPinching & !hasSpawned) // Checks if a pinch is registred. And object is not already spawned. 
+            {
+                if (hit.transform.tag == "pickableTag" & !hasPinched)
+                {   
+                    hasPinched = true;
                     hit.collider.GetComponent<sphereState>().changeColor();
-                } else {
+                }
+                if (hit.transform.tag != "pickableTag" & !hasSpawned)
+                {
                     SpawnObject(transformPosition.x, transformPosition.y, transformPosition.z); // Calling spawn object function. 
                 }
-            } else if (!isLeftIndexPinching) // Else if released change hasSpawned to false again. 
-                hasSpawned = false;
-                hasPinched = false;
+            }
         }
 
         //Store last position
