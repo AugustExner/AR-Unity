@@ -9,6 +9,7 @@ TagManager:
   - CubeGreen
   - Colorchange
   - colorCube
+  - pickableTag
   layers:
   - Default
   - TransparentFX

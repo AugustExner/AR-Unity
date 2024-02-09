@@ -17,19 +17,20 @@ public class RayCast : MonoBehaviour
     public OVRHand leftHand;
     private bool isLeftIndexPinching;
     private bool hasSpawned = false;
+    private bool hasPinched = false;
 
-    public GameObject spawnSphere;
+    public GameObject spawnObject;
 
     // Start is called before the first frame update
     void Start()
     {
-      
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
@@ -49,21 +50,34 @@ public class RayCast : MonoBehaviour
 
         // Method for lefthand pinching
         if (leftHand.IsTracked) // Checks if left hand is being tracked
-            if (isLeftIndexPinching && !hasSpawned) // Checks if a pinch is registred. And object is not already spawned. 
-                SpawnObject(transformPosition.x, transformPosition.y, transformPosition.z); // Calling spawn object function. 
-            else if (!isLeftIndexPinching && hasSpawned) // Else if released change hasSpawned to false again. 
+        {
+            if (isLeftIndexPinching & !hasSpawned & !hasPinched) // Checks if a pinch is registred. And object is not already spawned. 
+            {
+                hasPinched = true;
+                if (hit.transform.tag == "pickableTag")
+                {
+                    hit.collider.GetComponent<sphereState>().changeColor();
+                } else {
+                    SpawnObject(transformPosition.x, transformPosition.y, transformPosition.z); // Calling spawn object function. 
+                }
+            } else if (!isLeftIndexPinching) // Else if released change hasSpawned to false again. 
                 hasSpawned = false;
+                hasPinched = false;
+        }
 
         //Store last position
         childCursor.transform.position = transformPosition;
 
-        if (hit.transform.tag == "colorCube") {
+        if (hit.transform.tag == "colorCube")
+        {
             MeshRenderer myrenderer = cube.GetComponent<MeshRenderer>();
 
             myrenderer.material = myrenderer.material == myRed ? myBlue : myRed;
             Debug.LogWarning(myrenderer.material);
         }
-        if(hit.transform.tag != "colorCube") {
+
+        if (hit.transform.tag != "colorCube")
+        {
             MeshRenderer myrenderer = cube.GetComponent<MeshRenderer>();
             myrenderer.material = myBlue;
         }
@@ -73,11 +87,10 @@ public class RayCast : MonoBehaviour
     // Spawn object method
     void SpawnObject(float x, float y, float z)
     {
-        Vector3 position = new Vector3(x, y,z); // Creates a new 3D Vector for the RayCast position. 
-        Instantiate(spawnSphere, position, Quaternion.identity); // Instaniates a gameObject based on spawnSPhere
-        MeshRenderer sphereMesh = spawnSphere.GetComponent<MeshRenderer>(); // Gets the mesh from the element
+        Vector3 position = new Vector3(x, y, z); // Creates a new 3D Vector for the RayCast position. 
+        Instantiate(spawnObject, position, Quaternion.identity); // Instaniates a gameObject based on spawnSPhere
+        MeshRenderer sphereMesh = spawnObject.GetComponent<MeshRenderer>(); // Gets the mesh from the element
         sphereMesh.material = myRed; // Changes it to red. 
         hasSpawned = true;
     }
 }
-   
