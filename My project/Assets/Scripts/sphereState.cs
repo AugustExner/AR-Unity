@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class sphereState : MonoBehaviour
 {
-    [SerializeField] private Material myRed;
+    [SerializeField] private Material myMaterial;
     [SerializeField] private Material myBlue;
 
     private MeshRenderer myRenderer;
@@ -22,7 +22,7 @@ public class sphereState : MonoBehaviour
     public void changeColor()
     {
         myRenderer = gameObject.GetComponent<MeshRenderer>();
-        myRenderer.material = myRenderer.sharedMaterial == myRed ? myBlue : myRed;
+        myRenderer.material = myRenderer.sharedMaterial == myMaterial ? myBlue : myMaterial;
         Debug.LogWarning("YES!");
     }
 }

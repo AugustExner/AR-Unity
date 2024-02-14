@@ -22,7 +22,7 @@ public class CollisionScript : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("pickableTag"))
         {
-            collider.GetComponent<sphereState>().changeColor();
+            Destroy(collider.gameObject);
         }
         Debug.Log("Entered collision with " + collider.gameObject.name);
     }
