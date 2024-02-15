@@ -10,14 +10,13 @@ public class HandrayCast : MonoBehaviour
     public GameObject hand;
 
     [SerializeField] private Material myMaterial;
+    [SerializeField] private GameObject childCursor;
 
     private bool isRightIndexPinching = false;
     public OVRHand rightHand;
     private bool hasSpawned = false;
     private bool hasPinched = false;
     private Vector3 transformPosition;
-
-    [SerializeField] private GameObject childCursor;
 
     public GameObject spawnObject;
 
