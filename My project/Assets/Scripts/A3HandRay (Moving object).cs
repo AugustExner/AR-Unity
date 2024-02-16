@@ -18,7 +18,7 @@ public class A3HandRay : MonoBehaviour
     private GameObject pickedObject;
 
     private Vector3 rightHandTransformPosition;
-    private Vector3 handDistance;
+    private float handDistance;
     private Vector3 scaleChange;
     private Vector3 originalScale;
 
@@ -88,14 +88,17 @@ public class A3HandRay : MonoBehaviour
                 {
                     isScaling = true;
                     originalScale = pickedObject.transform.localScale;
-                    handDistance = rightHand.transform.position - leftHand.transform.position;
+                    handDistance = rightHand.transform.position.x - leftHand.transform.position.x;
                 }
 
-                var scaleFactor = handDistance / (rightHand.transform.position.magnitude - leftHand.transform.position.magnitude);
-                var newScale = originalScale * scaleFactor.magnitude;
+
+                var scaleFactor = handDistance / (rightHand.transform.position.x - leftHand.transform.position.x);
+                var newScale = originalScale / scaleFactor;
+
+                Debug.LogWarning(rightHand.transform.position.x + " | " + leftHand.transform.position.x + " | " + handDistance + " | " + newScale);
 
 
-                
+
                 pickedObject.transform.localScale = newScale;
                 Debug.Log("scale it");
                 // var scale = pickedObject.transform.localScale;
@@ -109,10 +112,4 @@ public class A3HandRay : MonoBehaviour
             }
         }
     }
-
-    void scale()
-    {
-
-    }
-
 }
