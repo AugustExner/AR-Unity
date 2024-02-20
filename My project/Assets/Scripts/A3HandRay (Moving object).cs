@@ -18,9 +18,11 @@ public class A3HandRay : MonoBehaviour
     private GameObject pickedObject;
 
     private Vector3 rightHandTransformPosition;
+    private Vector3 rightHandTransformRotation;
     private float handDistance;
-    private Vector3 scaleChange;
+    
     private Vector3 originalScale;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,34 +52,44 @@ public class A3HandRay : MonoBehaviour
             isRightIndexPinching = rightHand.GetFingerIsPinching(OVRHand.HandFinger.Index);
             if (Physics.Raycast(transform.position, fwd, out hit))
             {
-                if (hit.transform.tag == "pickableTag" && isRightIndexPinching && pickedObject == null)
-                {
-                    Debug.LogWarning("It is pickable!");
-                    pickedObject = hit.transform.gameObject;
-                } 
-
                 if (isRightIndexPinching)
                 {
-                    resizeObject();
-                    //moveObject();
-                    
-                } else
+                    if (pickedObject == null)
+                    {
+                        pickedObject = hit.transform.gameObject;
+                    }
+                    switch(pickedObject.transform.tag)
+                    {
+                        case "MoveCube":
+                            moveObject(hit);
+                        break;
+                        case "ScaleCube":
+                            resizeObject(hit); 
+                        break;
+                        case "RotateCube":
+                            rotation(hit); 
+                        break;
+
+                    }
+                }
+                else
                 {
                     pickedObject = null;
                 }
             }
             rightHandTransformPosition = rightHand.transform.position;
+            rightHandTransformRotation = rightHand.transform.eulerAngles;
         }
         
     }
 
-    void moveObject()
+    void moveObject(RaycastHit hit)
     {
         Vector3 moveVector = rightHandTransformPosition - rightHand.transform.position;
-        pickedObject.transform.position -= moveVector * 10;
+        pickedObject.transform.position -= moveVector * 5;
     }
 
-    void resizeObject()
+    void resizeObject(RaycastHit hit)
     {
         if (leftHand.IsTracked)
         {
@@ -106,10 +118,19 @@ public class A3HandRay : MonoBehaviour
                 //scale.z += 0.1f;
 
                 //Note: Apply scale on X upon cameras X cordinate. 
-            } else
+            }
+            else
             {
                 isScaling = false;
             }
         }
+    }
+
+    void rotation(RaycastHit hit)
+    {
+        Vector3 objectStartRotation = pickedObject.transform.eulerAngles;
+
+        objectStartRotation.y -= rightHandTransformRotation.y - rightHand.transform.eulerAngles.y;
+        pickedObject.transform.eulerAngles = objectStartRotation;
     }
 }
