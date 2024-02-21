@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Assignments.unity
     guid: 5ea5af63b0c3137479e94bd6f0b6659d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Assignment 3.unity
     guid: 6b3bdf568f3d99949ba425b32b63a8f7
+  - enabled: 1
+    path: Assets/Scenes/Assignment4.unity
+    guid: 4d2a9797ced2b1741b18de689ae2db31
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 50bdbcfd637d2f341b0920a25ab9abd0, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5391d2510463bfc429c95d045deb1232, type: 2}
