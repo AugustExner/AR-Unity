@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CustomHandPose : MonoBehaviour
@@ -10,11 +11,15 @@ public class CustomHandPose : MonoBehaviour
     [SerializeField] private Transform ringFingerTip;
     [SerializeField] private Transform pinkyTip;
     [SerializeField] private Transform palm;
+    [SerializeField] private GameObject spawnObject;
+    [SerializeField] private GameObject leftHand;
 
     public Renderer cubeRenderer;
 
     // Threshold for determining if a finger is considered extended or not
-    public float extendedThreshold = 0.02f;
+    public float bendThreshold = 0.03f;
+    public float extendedThreshold = 0.07f;
+    private bool hasChanged = false;
 
     // Update is called once per frame
     void Update()
@@ -24,6 +29,8 @@ public class CustomHandPose : MonoBehaviour
 
     void DetectSpiderManGesture()
     {
+        Vector3 handPoint = leftHand.transform.position;
+
         // Calculate distances from fingertips to palm center
         float distanceThumb = Vector3.Distance(thumbTip.position, palm.position);
         float distanceIndex = Vector3.Distance(indexFingerTip.position, palm.position);
@@ -31,16 +38,28 @@ public class CustomHandPose : MonoBehaviour
         float distanceRing = Vector3.Distance(ringFingerTip.position, palm.position);
         float distancePinky = Vector3.Distance(pinkyTip.position, palm.position);
 
+        Debug.LogWarning(distanceMiddle);
+
         // Check if the gesture matches the "Spider-Man" pose
         if (IsFingerExtended(distanceIndex) && 
             IsFingerExtended(distancePinky) &&
-            !IsFingerExtended(distanceMiddle) && 
-            !IsFingerExtended(distanceRing))
+            IsFingerBend(distanceMiddle) && 
+            IsFingerBend(distanceRing))
         {
             // Spider-Man gesture detected
             Debug.Log("Spider-Man gesture detected!");
-            ChangeCubeColor();
-            // Trigger your action here, e.g., spawn web effect or anything related
+
+            if (!hasChanged)
+            {
+                //ChangeCubeColor();
+                SpawnObject(handPoint.x + 0.30f, handPoint.y, handPoint.z);
+                hasChanged = true;
+                
+            }
+
+        } else
+        {
+            hasChanged = false;
         }
     }
 
@@ -48,6 +67,11 @@ public class CustomHandPose : MonoBehaviour
     {
         // A finger is considered extended if its distance to the palm center is greater than the threshold
         return distance > extendedThreshold;
+    }
+
+    bool IsFingerBend(float distance)
+    {
+        return distance < bendThreshold;
     }
 
     void ChangeCubeColor(){
@@ -65,5 +89,11 @@ public class CustomHandPose : MonoBehaviour
             cubeRenderer.material.color = Color.red;
             }
         }
+    }
+
+    void SpawnObject(float x, float y, float z)
+    {
+        Vector3 position = new Vector3(0.1f, 0.5f, 0.0f); // Creates a new 3D Vector for the RayCast position. 
+        Instantiate(spawnObject, position, Quaternion.identity); // Instaniates a gameObject based on spawnSPhere
     }
 }
