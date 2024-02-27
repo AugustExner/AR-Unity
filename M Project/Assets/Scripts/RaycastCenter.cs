@@ -17,11 +17,17 @@ public class RaycastCenter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         RaycastHit hit;
 
         isLeftIndexPinching = leftHand.GetFingerIsPinching(OVRHand.HandFinger.Index);
-        
+
         if (Physics.Raycast(transform.position, fwd, out hit))
         {
             Debug.LogWarning("We are looking at something! " + hit.point);
@@ -32,16 +38,9 @@ public class RaycastCenter : MonoBehaviour
         {
             if (isLeftIndexPinching && hit.transform.tag == "colorTag") // If released reset
             {
-             var trackedObject = hit.transform.GetComponent<MeshRenderer>();    
-             trackedObject.material.color = menu.GetComponent<menuScript>().GetSelectedColor();
+                var trackedObject = hit.transform.GetComponent<MeshRenderer>();
+                trackedObject.material.color = menu.GetComponent<menuScript>().GetSelectedColor();
             }
         }
-
-    }
-
-        // Update is called once per frame
-        void Update()
-    {
-        
     }
 }
