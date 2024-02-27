@@ -1,36 +1,33 @@
+using Oculus.Interaction;
 using UnityEngine;
 
 public class buttonState : MonoBehaviour
 {
-    [SerilizedField] Material gray;
-    [SerilizedField] Material white;
-    private MeshRenderer myRenderer;
+    public bool isToggled = false;
+
+    public RoundedBoxProperties roundedBoxProperties;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        if (roundedBoxProperties == null)
+        {
+            roundedBoxProperties = GetComponentInChildren<RoundedBoxProperties>();
+        }
     }
-
+    
     // Update is called once per frame
     void Update()
     {
 
     }
 
-    public void setActive()
+    public void Toggle()
     {
-        if (gameObject.GetComponent<MeshRenderer>().material = gray) 
-        { 
-            setInactive(); 
-        } else 
-        {
-            gameObject.GetComponent<MeshRenderer>().material = gray;
-        }
+        isToggled = !isToggled;
 
-    }
-    public void setInactive()
-    {
-        gameObject.GetComponent<MeshRenderer>().material = white;
+        roundedBoxProperties.BorderInnerRadius = isToggled ? 0.1f : 0.005f;
+        Debug.LogWarning("Toggle!");
+
     }
 }

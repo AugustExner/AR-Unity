@@ -62,7 +62,9 @@ public class A3HandRay : MonoBehaviour
                     {
                         case "MoveCube":
                             moveObject(hit);
-                        break;
+                            resizeObject(hit); 
+                            rotation(hit);
+                            break;
                         case "ScaleCube":
                             resizeObject(hit); 
                         break;
