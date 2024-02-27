@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 12fbf21a423697948bb9257cb3329500
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - childCursor: {instanceID: 0}
+  - cube: {instanceID: 0}
+  - capsule: {instanceID: 0}
+  - myRed: {instanceID: 0}
+  - myBlue: {instanceID: 0}
+  - leftHand: {instanceID: 0}
+  - spawnObject: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
