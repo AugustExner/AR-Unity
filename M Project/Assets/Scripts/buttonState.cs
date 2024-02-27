@@ -1,11 +1,19 @@
 using Oculus.Interaction;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class buttonState : MonoBehaviour
 {
-    public bool isToggled = false;
+    [SerializeField]
+    private bool isToggled = false;
+    public bool IsToggled => isToggled;
 
     public RoundedBoxProperties roundedBoxProperties;
+
+    public UnityEvent<buttonState> WhenToggledOn;
+
+    [SerializeField]
+    private Color buttonColor;
 
     // Start is called before the first frame update
     void Start()
@@ -29,5 +37,15 @@ public class buttonState : MonoBehaviour
         roundedBoxProperties.BorderOuterRadius = isToggled ? 0.015f : 0.002f;
         Debug.LogWarning("Toggle! : " + roundedBoxProperties.name);
 
+        if (isToggled )
+        {
+            WhenToggledOn.Invoke(this);
+        }
+
+    }
+
+    public Color GetColor()
+    {
+        return buttonColor;
     }
 }

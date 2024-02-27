@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class objectStateColor : MonoBehaviour
 {
-    [SerializeField] Material matRed;
-    [SerializeField] Material matGreen;
-    [SerializeField] Material matBlue;
+    [SerializeField] GameObject colorMenu;
+
 
     private MeshRenderer myRenderer;
 
@@ -19,23 +18,13 @@ public class objectStateColor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void SetRed()
-    {
         myRenderer = gameObject.GetComponent<MeshRenderer>();
-        myRenderer.material = matRed;
-        Debug.LogWarning("RED!");
-    }
-    public void SetGreen()
-    {
-        myRenderer = gameObject.GetComponent<MeshRenderer>();
-        myRenderer.material = matGreen;
-    }
-    public void SetBlue()
-    {
-        myRenderer = gameObject.GetComponent<MeshRenderer>();
-        myRenderer.material = matBlue;
+        if (colorMenu.GetComponent<menuScript>().GetSelectedColor() == null) 
+        {
+            myRenderer.material.color = Color.white;
+        }   else
+        {
+            myRenderer.material.color = colorMenu.GetComponent<menuScript>().GetSelectedColor();
+        }
     }
 }
