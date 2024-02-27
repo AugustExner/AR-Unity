@@ -13,6 +13,7 @@ TagManager:
   - RotateCube
   - ScaleCube
   - MoveCube
+  - colorTag
   layers:
   - Default
   - TransparentFX
