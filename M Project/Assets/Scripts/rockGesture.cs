@@ -40,8 +40,6 @@ public class rockGesture : MonoBehaviour
         float distanceRing = Vector3.Distance(ringFingerTip.position, palm.position);
         float distancePinky = Vector3.Distance(pinkyTip.position, palm.position);
 
-        Debug.LogWarning(distanceMiddle);
-
         // Check if the gesture matches the "Spider-Man" pose
         if (IsFingerBend(distanceIndex) &&
             IsFingerBend(distancePinky) &&
@@ -49,7 +47,6 @@ public class rockGesture : MonoBehaviour
             IsFingerBend(distanceRing))
         {
             // Spider-Man gesture detected
-            Debug.Log("Rock gesture detected!");
             menu.SetActive(true);
         }
         else
