@@ -37,7 +37,7 @@ public class buttonState : MonoBehaviour
         roundedBoxProperties.BorderOuterRadius = isToggled ? 0.015f : 0.002f;
         Debug.LogWarning("Toggle! : " + roundedBoxProperties.name);
 
-        if (isToggled )
+        if (isToggled)
         {
             WhenToggledOn.Invoke(this);
         }
@@ -47,5 +47,6 @@ public class buttonState : MonoBehaviour
     public Color GetColor()
     {
         return buttonColor;
-    }
+    }   
+
 }

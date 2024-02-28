@@ -9,8 +9,6 @@ public class RaycastCenter : MonoBehaviour
 
     public OVRHand leftHand;
     private bool isLeftIndexPinching;
-    private bool hasSpawned = false;
-    private bool hasPinched = false;
 
 
 

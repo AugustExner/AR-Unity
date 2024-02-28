@@ -16,6 +16,7 @@ TagManager:
   - colorTag
   - whiteboard
   - fingerTip
+  - paint
   layers:
   - Default
   - TransparentFX
