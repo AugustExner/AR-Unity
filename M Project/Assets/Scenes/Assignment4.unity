@@ -173,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &12587408
 Transform:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 12587407}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.035, y: 1, z: -0.357}
+  m_LocalPosition: {x: 0.785, y: 1, z: -0.357}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5079,9 +5079,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5929173765604187919, guid: 1651e3e6ebd80c9498563bef014af898, type: 3}
       insertIndex: -1
       addedObject: {fileID: 786398939}
-    - targetCorrespondingSourceObject: {fileID: 1887186233000556994, guid: 1651e3e6ebd80c9498563bef014af898, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 1651e3e6ebd80c9498563bef014af898, type: 3}
 --- !u!4 &786398935 stripped
 Transform:
@@ -11759,7 +11756,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760750811}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -11774,7 +11771,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
