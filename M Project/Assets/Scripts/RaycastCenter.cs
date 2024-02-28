@@ -30,7 +30,7 @@ public class RaycastCenter : MonoBehaviour
 
         if (Physics.Raycast(transform.position, fwd, out hit))
         {
-            Debug.LogWarning("We are looking at something! " + hit.point);
+            //Debug.LogWarning("We are looking at something! " + hit.point);
         }
 
 

@@ -49,7 +49,7 @@ public class rockGesture : MonoBehaviour
             IsFingerBend(distanceRing))
         {
             // Spider-Man gesture detected
-            Debug.Log("Rock gesture detected!");
+            //Debug.Log("Rock gesture detected!");
             menu.SetActive(true);
         }
         else

@@ -1019,6 +1019,7 @@ GameObject:
   - component: {fileID: 248796926}
   - component: {fileID: 248796925}
   - component: {fileID: 248796924}
+  - component: {fileID: 248796929}
   m_Layer: 0
   m_Name: ButtonVisual
   m_TagString: Untagged
@@ -1147,6 +1148,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &248796929
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248796921}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &253012050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,6 +1596,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 656016911}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &405764875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5929173765604187919, guid: 1651e3e6ebd80c9498563bef014af898, type: 3}
+  m_PrefabInstance: {fileID: 5285911905093329118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &405764882
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405764875}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &413241751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,6 +2670,7 @@ GameObject:
   - component: {fileID: 593183961}
   - component: {fileID: 593183963}
   - component: {fileID: 593183964}
+  - component: {fileID: 593183965}
   m_Layer: 0
   m_Name: Poke Blue
   m_TagString: Untagged
@@ -2872,6 +2923,28 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
+--- !u!64 &593183965
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593183959}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &601697530
 GameObject:
   m_ObjectHideFlags: 0
@@ -3263,6 +3336,7 @@ GameObject:
   - component: {fileID: 651077112}
   - component: {fileID: 651077111}
   - component: {fileID: 651077110}
+  - component: {fileID: 651077115}
   m_Layer: 0
   m_Name: ButtonVisual
   m_TagString: Untagged
@@ -3391,6 +3465,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &651077115
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651077107}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &656016910
 GameObject:
   m_ObjectHideFlags: 0
@@ -6106,6 +6202,7 @@ GameObject:
   - component: {fileID: 1170147630}
   - component: {fileID: 1170147632}
   - component: {fileID: 1170147633}
+  - component: {fileID: 1170147634}
   m_Layer: 0
   m_Name: Poke Green
   m_TagString: Untagged
@@ -6358,6 +6455,28 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
+--- !u!64 &1170147634
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170147628}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1176623499
 GameObject:
   m_ObjectHideFlags: 0
@@ -6897,6 +7016,7 @@ GameObject:
   - component: {fileID: 1284259402}
   - component: {fileID: 1284259401}
   - component: {fileID: 1284259403}
+  - component: {fileID: 1284259404}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -6991,6 +7111,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1138736132}
+  leftHand: {fileID: 807339078}
+--- !u!114 &1284259404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284259399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8117a8a501ca7f44ca8a44cac323f4fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   leftHand: {fileID: 807339078}
 --- !u!1 &1287114928
 GameObject:
@@ -10580,6 +10713,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5929173765604187919, guid: 1651e3e6ebd80c9498563bef014af898, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 405764882}
     - targetCorrespondingSourceObject: {fileID: 1887186233000556994, guid: 1651e3e6ebd80c9498563bef014af898, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
