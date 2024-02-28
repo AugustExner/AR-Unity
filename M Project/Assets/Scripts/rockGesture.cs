@@ -12,9 +12,10 @@ public class rockGesture : MonoBehaviour
     [SerializeField] private Transform palm;
     [SerializeField] private GameObject menu;
 
+
     // Threshold for determining if a finger is considered extended or not
     public float bendThreshold = 0.03f;
-
+    public bool isRockMove = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,14 +49,20 @@ public class rockGesture : MonoBehaviour
             IsFingerBend(distanceMiddle) &&
             IsFingerBend(distanceRing))
         {
-            // Spider-Man gesture detected
-            //Debug.Log("Rock gesture detected!");
-            menu.SetActive(true);
+            if (!isRockMove)
+            {
+                //Debug.Log("Rock gesture detected!");
+                menu.SetActive(true);
+                GetComponent<clickSound>().playClick();
+                isRockMove = true;
+            }
         }
         else
         {
             menu.SetActive(false);
+            isRockMove = false;
         }
+
     }
 
     bool IsFingerBend(float distance)

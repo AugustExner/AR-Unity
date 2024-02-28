@@ -36,7 +36,8 @@ public class RayAndPinchInteraction : MonoBehaviour
                         hasPinched = true;
                         var pickedObject = hit.transform.gameObject;
                         pickedObject.GetComponentInParent<buttonState>().Toggle();
-                        
+                        pickedObject.GetComponentInParent<clickSound>().playClick();
+
                     }
                 }
                 else {
